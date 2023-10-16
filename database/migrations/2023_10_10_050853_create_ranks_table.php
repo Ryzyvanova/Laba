@@ -15,7 +15,12 @@ return new class extends Migration
     {
         Schema::create('ranks', function (Blueprint $table) {
             $table->id();
+            $table->integer('parent')->nullable();
+            $table->string('title');
+            $table->string('link');
+            $table->text('content_rank');
             $table->timestamps();
+            $table->softDeletes();
         });
     }
 
